@@ -1,14 +1,28 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Recipe Django App</title>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, inital-scale=1.0">
+    <link rel="stylesheet" href="../../static/recipes/index.css">
+  </head>
   <body>
-    <div style="margin-left: 300px">
-      <h1>RECIPE APP</h1>
-      <p>Django project | Python Achievement # 2</p>
-      <br />
-      <p>
-        A recipe application built using django for the first time. This is my
-        first view and template I have ever built.
-      </p>
+    <div class="main__head">
+      <div class="main__head--img">
+        <img src={% static 'recipes/images/kitchen.jpg'%} alt="kitchen" id="main__img--kitchen">
+      </div>
+      <div class="main__head--text">
+        <h1>RECIPE APP</h1>
+        <p>Django project | Python Achievement # 2</p>
+        <br />
+        <p>
+          A recipe application built using django for the first time. This is my
+          first view and template I have ever built.
+        </p>
+      </div>
+      
     </div>
+    
   </body>
 </html>

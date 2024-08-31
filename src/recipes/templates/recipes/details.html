@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recipe Django App</title>
+    <meta charset="UTF-8" />
+    <meta name="viewpoint" content="width=device-width, inital-scale=1.0" />
+    <link rel="stylesheet" href="../../static/recipes/index.css" />
+  </head>
+  <body>
+    <div class="details__layout">
+      
+      <div class="">
+        <h1>{{object.name}}</h1>
+        <img src="{{object.pic.url}}" width="400" height="300" />
+        <br> 
+
+        <b>Name: </b> {{object.name}} <br />
+
+        <b>Cooking-time: </b> {{object.cooking_time}}min <br />
+
+        <b>Difficulty: </b> {{object.difficulty}} <br />
+
+        <b>Ingredients: </b> {{object.ingredients}} <br />
+
+        <b>Directions: </b> {{object.directions}} <br />
+      </div>
+    </div>
+  </body>
+</html>
