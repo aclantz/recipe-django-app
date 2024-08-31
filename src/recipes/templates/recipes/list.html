@@ -10,23 +10,21 @@
     <div class="list__layout">
       <h1 class="list--text">Recipe list</h1>
 
-      <table class="list--table">
-        {% for object in object_list %} {% comment%} now go through the list
-        element-by-element {% endcomment%}
-        <tr>
-          <td class="table--img">
-            <img src="{{object.pic.url}}" widht="300" height="200" />
-          </td>
-          {% comment%} display the picture of recipe {% endcomment%}
-          <td class="table--text">
+      <ul class="list--grid">
+        {% for object in object_list %}
+
+        <li class="grid--item">
+          <img src="{{object.pic.url}}" widht="300" height="200" />
+
+          <span class="grid--text">
             <a href="{{object.get_absolute_url}}"><h2>{{object.name}}</h2></a>
             Cooking-time: {{object.cooking_time}}min <br />
             Difficulty: {{object.difficulty}}
-          </td>
-          {% comment%} print the name of recipe {% endcomment%}
-        </tr>
+          </span>
+        </li>
+
         {% endfor %}
-      </table>
+      </ul>
     </div>
   </body>
 </html>

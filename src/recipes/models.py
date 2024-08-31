@@ -17,16 +17,22 @@ class Recipe(models.Model):
     return f"id: {self.id}, Name: {self.name}"
 
   def get_absolute_url(self):
+      # get pk (primary key) of self and create url usable representation
       return reverse ('recipes:detail', kwargs={'pk': self.pk})
   
-  def calculate_difficulty(self, cooking_time, ingredients):
+  def ingredients_list(self):
+      # transform ingredients string into measurable list
+      return self.ingredients.split(', ')
+  
+  def calculate_difficulty(self, cooking_time, ingredients_list):
      # calculate the difficulty based on two provided arguments
-        if cooking_time < 10 and len(ingredients) < 4:
+        ingrd_list_num = len(self.ingredients_list())
+        if self.cooking_time < 10 and ingrd_list_num < 4:
             difficulty = "Easy"
-        elif cooking_time < 10 and len(ingredients) >= 4:
+        elif self.cooking_time < 10 and ingrd_list_num >= 4:
             difficulty = "Medium"
-        elif cooking_time >= 10 and len(ingredients) < 4:
+        elif self.cooking_time >= 10 and ingrd_list_num < 4:
             difficulty = "Intermediate"
-        elif cooking_time >= 10 and len(ingredients) >= 4:
+        elif self.cooking_time >= 10 and ingrd_list_num >= 4:
             difficulty = "Hard"
         return difficulty  

@@ -34,7 +34,10 @@ a:hover {
 }
 
 /* list --------------------------------------------------------------------------------- */
-
+li {
+  list-style: none;
+  margin-bottom: 25px;
+}
 .list__layout {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -45,22 +48,25 @@ a:hover {
   margin-top: -700px;
   margin-left: 200px;
 }
-.table--img, .table--text {
-  padding: 5px; 
+.list--grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
 }
-.table--img img {
+.grid--item img {
   width: 300px; 
   height: 200px; 
   object-fit: cover; /* Ensures the image covers the specified dimensions without distorting */
   padding-right: 10px;
 }
-.table--text {
+.grid--text {
   padding-left: 100px;
   text-align: left;
 }
-/* .list--table {
-  border: 1px solid black;
-} */
+.grid--text h2 {
+  margin: -1px;
+}
+
 
 /* Details ------------------------------------------------------------------------------ */
 
