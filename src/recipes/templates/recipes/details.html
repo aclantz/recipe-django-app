@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="../../static/recipes/index.css" />
   </head>
   <body>
+    <nav class="navbar">
+      <div class="navbar__brand">
+        <a href="#"><span>Recipe App</span></a>
+      </div>
+      <div class="navbar__links">
+        <a href="#"><span>Home</span></a>
+        <a href="#"><span>Recipes</span></a>
+        <a href="#"><span>About</span></a>
+        <a href="#"><span>Contact</span></a>
+      </div>
+    </nav>
     <div class="details__layout">
       
       <div class="">
@@ -17,7 +28,7 @@
         <b>Name: </b> {{object.name}} <br />
 
         <b>Cooking-time: </b> {{object.cooking_time}}min <br />
-
+        
         <b>Difficulty: </b> {{object.difficulty}} <br />
 
         <b>Ingredients: </b> {{object.ingredients}} <br />

@@ -1,24 +1,37 @@
-* {
-  background-color: #faf9f6;
-  color: #3a3b3c;  
-  box-sizing: border-box;
-}
 
 :root {
   --bg-color: #faf9f6;
+  --text-color: #3a3b3c;
   --light-green: #c5c191;
   --mid-green: #a3aa81;
   --dark-green: #4c4735;
 }
+
+* {
+  background-color: var(--bg-color);
+  color: var(--text-color);  
+  box-sizing: border-box;
+}
+
+html, body {
+  /* added to help navbar */
+  margin: 0;
+  padding: 0;
+}
+
 h1, h2 {
   color: var(--mid-green);
 }
 a {
   text-decoration: none;
 }
-a:hover {
-  color: var(--dark-green)
+li {
+  list-style: none;
+  margin-bottom: 25px;
 }
+
+/* Main/Home ------------------------------------------------------------------------- */
+
 .main__head {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -34,10 +47,7 @@ a:hover {
 }
 
 /* list --------------------------------------------------------------------------------- */
-li {
-  list-style: none;
-  margin-bottom: 25px;
-}
+
 .list__layout {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -77,3 +87,42 @@ li {
 .details__layout--img {
   align-self: end;
 }
+
+ /* Navigation Bar ---------------------------------------------------------------------- */
+
+ .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--light-green);
+  padding: 10px 20px;
+  position: relative; 
+  top: 0; /* Ensures the navbar starts at the top edge */
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw; /* Move left edge to start from the viewport edge */
+  margin-right: -50vw; /* Move right edge to extend to the viewport edge */
+  width: 100vw; /* Set width to full viewport width */
+}
+.navbar__brand {
+  font-size: 24px;
+  display: inline-block;
+}
+.navbar__brand a span {
+  color: var(--bg-color);
+  background-color: var(--light-green);
+}
+.navbar__links {
+  display: inline-block;
+  /* background of space between a */
+  background-color: var(--light-green);
+}
+.navbar__links a {
+  /* create space between a  */
+  margin-right: 10px;
+}
+.navbar__links a span {
+  color: var(--bg-color);
+  background-color: var(--light-green);
+}
+

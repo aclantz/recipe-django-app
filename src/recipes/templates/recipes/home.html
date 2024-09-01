@@ -8,6 +8,17 @@
     <link rel="stylesheet" href="../../static/recipes/index.css">
   </head>
   <body>
+    <nav class="navbar">
+      <div class="navbar__brand">
+        <a href="#"><span>Recipe App</span></a>
+      </div>
+      <div class="navbar__links">
+        <a href="#"><span>Home</span></a>
+        <a href="#"><span>Recipes</span></a>
+        <a href="#"><span>About</span></a>
+        <a href="#"><span>Contact</span></a>
+      </div>
+    </nav>
     <div class="main__head">
       <div class="main__head--img">
         <img src={% static 'recipes/images/kitchen.jpg'%} alt="kitchen" id="main__img--kitchen">
@@ -26,3 +37,11 @@
     
   </body>
 </html>
+
+
+{% comment %} <ul class="navbar__links">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Recipes</a></li>
+  <li><a href="#">About</a></li>
+  <li><a href="#">Contact</a></li>
+</ul> {% endcomment %}
