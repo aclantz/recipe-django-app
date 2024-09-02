@@ -5,7 +5,7 @@ app_name = 'recipes'
 
 # map the URL to the view, each path() takes two params (route, view)
 urlpatterns = [
-  path('', home),
+  path('', home, name="home"),
   path('list/', RecipeListView.as_view(), name="list"),
   path('list/<pk>', RecipeDetailView.as_view(), name='detail'),
 ]

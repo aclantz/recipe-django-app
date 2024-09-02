@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recipe Django App</title>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, inital-scale=1.0">
+    <link rel="stylesheet" href="../../static/recipes/index.css">
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar__brand">
+        <a href="#"><span>Recipe App</span></a>
+      </div>
+      <div class="navbar__links">
+        <a href="#"><span>Home</span></a>
+        <a href="{%url 'login'%}"><span>Login</span></a>
+      </div>
+    </nav>
+    <div class='main__body'>
+      <div>
+        <h1>Bye!</h1>
+        <p>You have successfuly logged out</p>
+        <br>
+        <p>Would you like to log in again?</p>
+        <a herf="{%url 'login'%}"><button>Login</button></a>
+      </div>
+    </div>
+    
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recipe Django App</title>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, inital-scale=1.0">
+    <link rel="stylesheet" href="../../static/recipes/index.css">
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar__brand">
+        <a href="#"><span>Recipe App</span></a>
+      </div>
+      <div class="navbar__links">
+        <a href="#"><span>Home</span></a>
+        {% comment %} <a href="#"><span>Recipes</span></a>
+        <a href="#"><span>About</span></a>
+        <a href="#"><span>Contact</span></a> {% endcomment %}
+      </div>
+    </nav>
+    <div class='main__body'>
+      <div class='login__title'>
+        <h1>Login</h1>
+      </div>
+      <div class='login__form'>
+        {% if error_message %}
+        {{error_message}}
+        {% endif %}
+        <form action="" method="POST" class='login__form--items'>
+          {% comment %} add Django security token {% endcomment %}
+          {% csrf_token %}   
+          {% comment %} print form received from view  {% endcomment %}
+          {{form}}           
+          <button type="submit" >Login</button>
+       </form>
+      </div>
+    </div>
+    
+  </body>
+</html>
