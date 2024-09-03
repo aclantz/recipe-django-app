@@ -4,7 +4,7 @@
   --text-color: #3a3b3c;
   --light-green: #c5c191;
   --mid-green: #a3aa81;
-  --dark-green: #4c4735;
+  --dark-green: #595f40;
 }
 
 * {
@@ -54,7 +54,7 @@ button:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--light-green);
+  background-color: var(--mid-green);
   padding: 10px 20px;
   position: relative; 
   top: 0; /* Ensures the navbar starts at the top edge */
@@ -70,12 +70,12 @@ button:hover {
 }
 .navbar__brand a span {
   color: var(--bg-color);
-  background-color: var(--light-green);
+  background-color: var(--mid-green);
 }
 .navbar__links {
   display: inline-block;
   /* background of space between a */
-  background-color: var(--light-green);
+  background-color: var(--mid-green);
 }
 .navbar__links a {
   /* create space between a  */
@@ -83,7 +83,7 @@ button:hover {
 }
 .navbar__links a span {
   color: var(--bg-color);
-  background-color: var(--light-green);
+  background-color: var(--mid-green);
 }
 
 /* Main/Home ------------------------------------------------------------------------- */
@@ -173,3 +173,51 @@ button:hover {
 .login__form--items {
   padding: 10px;
 } */
+
+/* Search ------------------------------------------------------------------------- */
+
+.search__layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  gap: 20px; 
+}
+#search__img--pantry {
+  width: 500px;
+  height: 800px;
+  object-fit: cover;
+}
+.search--query {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-bottom: 1px solid var(--dark-green);
+}
+.search__form input[type="text"] {
+  width: 100%; 
+  padding: 10px; 
+  margin-bottom: 15px; 
+  border: 1px solid var(--dark-green); 
+}
+.search__form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid var(--dark-green);
+  background-color: var(--mid-green); 
+  color: var(--bg-color); 
+}
+/* Add a custom arrow for the dropdown */
+/* .search__form select::after {
+  content: '▼';
+  position: absolute;
+  right: 10px;
+  pointer-events: none;
+} */
+.view-all-btn {
+  width: max-content;
+  margin-bottom: 15px;
+}
+.search--query form {
+  width: 30%;
+}

@@ -24,28 +24,24 @@ class RecipeDetailView(LoginRequiredMixin, DetailView):
 
 def SearchView(request):
   form = RecipeSearchForm(request.POST or None)
-  recipes = Recipe.objects.all()                              #GET all recipes
+  recipes = Recipe.objects.all().values('name', 'cooking_time', 'difficulty', 'ingredients')                              #GET all recipes
   recipe_df = None                                            #recipe_data-frame initialize
   chart = None                                                #chart initialize
   qs = None
 
   if request.method == 'POST':
-    if 'view_all' in request.POST:
-      qs = recipes.values('name', 'ingredients')
-      chart_type = None
-    else:
-      recipe_title = request.POST.get('recipe_title')
-      chart_type = request.POST.get('chart_type')
-      print(recipe_title, chart_type)                                                #terminal test
-      qs = Recipe.objects.filter(name__icontains=recipe_title)\
-        .values('name', 'ingredients', 'cooking_time', 'difficulty')                 #apply filter to extract data
-      print(f"QuerySet: {qs}")                                                       #test to see query
+    # recipes = recipes.values('name', 'ingredients')
+    recipe_title = request.POST.get('recipe_title')
+    chart_type = request.POST.get('chart_type')
+    print("*** POST: " + recipe_title, chart_type)                                                #terminal test
+    qs = recipes.filter(name__icontains=recipe_title)
+    print(f"*** QuerySet: {qs}")                                                       #test to see query
 
     if qs.exists():
       recipe_df = pd.DataFrame(qs)                                                 #convert query-set values to pandas data-frame
-      chart = get_chart(chart_type, recipe_df, labels=recipe_df['name'].values)     #define chart params from data-frame values
+      all_recipes_df = pd.DataFrame(recipes)
+      chart = get_chart(chart_type, all_recipes_df, highlight_recipe=recipe_df.iloc[0])     #define chart params from data-frame values
       recipe_df = recipe_df[['name', 'ingredients']].to_html()                                                       #convert data-frame to html
-
 
   context = {
     'form': form,
@@ -55,3 +51,9 @@ def SearchView(request):
     'qs': qs,
   }
   return render(request, 'recipes/search.html', context) 
+
+
+#  qs = Recipe.objects.filter(name__icontains=recipe_title)\
+#       .values('name', 'ingredients', 'cooking_time', 'difficulty')                 #apply filter to extract data
+#     print(f"*** QuerySet: {qs}")                             
+# labels=recipe_df['name'].values         

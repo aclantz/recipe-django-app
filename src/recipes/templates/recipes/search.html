@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -19,40 +20,55 @@
       </div>
     </nav>
     <div class="search__layout">
-      <h1>Search</h1>
-      <form action="" method="POST">
-        {% csrf_token %}
-        {{form}}
-        <button type="submit">search</button>
-      </form>
-      <br>
-      <button onclick="window.location.href='{% url 'recipes:search' %}?view_all=true'">View All Recipes</button>
-      <br>
-      <div class="search--results">
-        {% if qs %}
-        <ul>
-          {% for item in qs %}
+      <div class="search__img">
+        <img src={% static 'recipes/images/pantry.jpg'%} alt="pantry" id="search__img--pantry">
+      </div>
+
+      <div class="search__elements">
+
+        <div class="search--query">
+          <h1>Search</h1>
+          <form action="" method="POST" class="search__form">
+            {% csrf_token %} {{form}}
+            <button type="submit">Search</button>
+          </form>
+          <br />
+          <button
+            onclick="window.location.href='{% url 'recipes:search' %}?view_all=true'" class="view-all-btn">
+            View All Recipes
+          </button>
+        </div>
+        
+        <div class="search--results">
+          {% if qs %}
+          <ul>
+            {% for item in qs %}
             <li>
               <a href="{{ item.get_absolute_url }}"><h2>{{ item.name }}</h2></a>
               <p>{{ item.ingredients }}</p>
             </li>
-          {% endfor %}
-        </ul>
-      {% elif recipes %}
-        <ul>
-          {% for recipe in recipes %}
             <li>
-              <a href="{{ recipe.get_absolute_url }}"><h2>{{ recipe.name }}</h2></a>
+              <img src="data:image/png;base64, {{chart|safe}}" />
+            </li>
+            {% endfor %}
+          </ul>
+          {% elif recipes %}
+          <ul>
+            {% for recipe in recipes %}
+            <li>
+              <a href="{{ recipe.get_absolute_url }}"
+                ><h2>{{ recipe.name }}</h2></a
+              >
               <p>{{ recipe.ingredients }}</p>
             </li>
-          {% endfor %}
-        </ul>
-      {% else %}
-        <p>No data currently</p>
-      {% endif %}
+            {% endfor %}
+          </ul>
+          {% else %}
+          <p>No data currently</p>
+          {% endif %}
+        </div>
       </div>
-      </div>
+      
     </div>
   </body>
 </html>
-

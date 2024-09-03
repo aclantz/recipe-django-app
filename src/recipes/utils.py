@@ -2,6 +2,13 @@ from io import BytesIO
 import base64
 import matplotlib.pyplot as plt
 
+COLORS = {
+    'background': '#faf9f6',      
+    'text': '#3a3b3c',            
+    'default': '#a3aa81',    
+    'highlight': '#595f40'    
+}
+
 def get_graph():
    # tricky and copied from CF directions
    buffer = BytesIO()                   #create a BytesIO buffer for the image         
@@ -14,32 +21,69 @@ def get_graph():
    return graph                         #return the image/graph
 
 
-def get_chart(chart_type, data, **kwargs):
-   #switch plot backend to AGG (Anti-Grain Geometry) - to write to file
-   #AGG is preferred solution to write PNG files
+def get_chart(chart_type, data, highlight_recipe=None, **kwargs):
    plt.switch_backend('AGG')
-   #specify figure size
-   fig=plt.figure(figsize=(6,3))
+   fig=plt.figure(figsize = (6,3))                                    #manage details of graphing
 
-   #select chart_type based on user input from the form
+   ax = plt.gca()                                                     # Set background color for the plot area using the COLORS dictionary
+   ax.set_facecolor(COLORS['background'])
+
    if chart_type == '#1':
-       #plot bar chart between date on x-axis and quantity on y-axis
-       plt.bar(data['cooking_time'], data['difficulty'])
+      #Bar Chart
+      colors = [COLORS['default'] if name != highlight_recipe['name'] else COLORS['highlight'] for name in data['name']]
+      plt.bar(data['name'], data['cooking_time'], color=colors)
+      plt.xlabel('Recipe Name', color=COLORS['text'])                 # X-axis label
+      plt.ylabel('Cooking Time (minutes)', color=COLORS['text'])      # Y-axis label
+      plt.title('Cooking Time by Recipe', color=COLORS['text'])
 
    elif chart_type == '#2':
-       #generate pie chart based on the cooking_time
-       #The recipe titles are sent from the view as labels
-       labels=kwargs.get('labels')
-       plt.pie(data['cooking_time'], labels=labels)
+      #Pie Chart
+      colors = [COLORS['default'] if name != highlight_recipe['name'] else COLORS['highlight'] for name in data['name']]
+      plt.pie(data['cooking_time'], labels=data['name'], colors=colors)
+      plt.title('Distribution of Cooking Times', color=COLORS['text'])
 
    elif chart_type == '#3':
-       #plot line chart based on date on x-axis and price on y-axis
-       plt.plot(data['date_created'], data['cooking_time'])
+      #Line Chart
+      plt.plot(data['name'], data['cooking_time'], color=COLORS['default'], marker='o')
+      plt.plot(highlight_recipe['name'], highlight_recipe['cooking_time'], color=COLORS['highlight'], marker='o', markersize=10)
+      plt.xlabel('Recipe Name', color=COLORS['text'])                 # X-axis label
+      plt.ylabel('Cooking Time (minutes)', color=COLORS['text'])      # Y-axis label
+      plt.title('Cooking Time by Recipe', color=COLORS['text'])
+
    else:
        print ('unknown chart type')
-
-   #specify layout details
-   plt.tight_layout()
-   #render the graph to file
-   chart =get_graph() 
+  
+   ax.tick_params(axis='x', colors=COLORS['text'])                    # Set color for tick labels
+   ax.tick_params(axis='y', colors=COLORS['text'])
+   plt.tight_layout()                                                  #specify layout details
+   chart = get_graph()                                                 #render the graph to file
    return chart       
+
+# def get_chart(chart_type, data, **kwargs):
+#    plt.switch_backend('AGG')
+#    fig=plt.figure(figsize = (6,3))                                    #manage details of graphing
+
+#    if chart_type == '#1':
+#       #Bar Chart
+#       plt.bar(data['name'], data['cooking_time'])
+#       plt.xlabel('Recipe Name')
+#       plt.ylabel('Cooking Time')
+
+#    elif chart_type == '#2':
+#       #Pie Chart
+#       labels = kwargs.get('labels')
+#       plt.pie(data['cooking_time'], labels=labels, autopct='%1.1f%%')
+#       plt.title('Cooking Time Distribution')
+
+#    elif chart_type == '#3':
+#       #Line Chart
+#       plt.plot(data['name'], data['difficulty'])
+#       plt.xlabel('Recipe Name')
+#       plt.ylabel('Difficulty Level')
+
+#    else:
+#        print ('unknown chart type')
+  
+#    plt.tight_layout()                                                  #specify layout details
+#    chart = get_graph()                                                 #render the graph to file
+#    return chart       
