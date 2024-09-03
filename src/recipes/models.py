@@ -24,7 +24,7 @@ class Recipe(models.Model):
       # transform ingredients string into measurable list
       return self.ingredients.split(', ')
   
-  def calculate_difficulty(self, cooking_time, ingredients_list):
+  def calculate_difficulty(self):
      # calculate the difficulty based on two provided arguments
         ingrd_list_num = len(self.ingredients_list())
         if self.cooking_time < 10 and ingrd_list_num < 4:

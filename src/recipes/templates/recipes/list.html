@@ -18,8 +18,21 @@
       </div>
     </nav>
     <div class="list__layout">
-      <h1 class="list--text">Recipe list</h1>
-
+      <div class="list--text">
+        <h1>Recipe list</h1>
+        <br>
+        <form action="" method="POST">
+          {% csrf_token %}
+          {{form}}
+          <button type="submit">search</button>
+        </form>
+        <br>
+        {% if recipe_df %}
+          {{recipe_df|safe}}
+        {% else %}
+          <p>no data currently</p>
+        {% endif %}
+      </div>
       <ul class="list--grid">
         {% for object in object_list %}
 

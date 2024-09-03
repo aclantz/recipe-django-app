@@ -41,12 +41,12 @@ button {
 button:hover {
   background-color: var(--dark-green);
 }
-form {
+/* form {
   padding: 2rem;
   display: grid;
   grid-template-columns: 1fr;
   border: 1px solid black;
-}
+} */
 
 /* Navigation Bar ---------------------------------------------------------------------- */
 
@@ -111,10 +111,11 @@ form {
   align-items: center;
   gap: 20px; 
 }
-.list--text {
+/* needs to be looked at, maybe flex direction column */
+/* .list--text {
   margin-top: -700px;
   margin-left: 200px;
-}
+} */
 .list--grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -126,13 +127,13 @@ form {
   object-fit: cover; /* Ensures the image covers the specified dimensions without distorting */
   padding-right: 10px;
 }
-.grid--text {
+/* .grid--text {
   padding-left: 100px;
   text-align: left;
 }
 .grid--text h2 {
   margin: -1px;
-}
+} */
 
 
 /* Details ------------------------------------------------------------------------------ */
