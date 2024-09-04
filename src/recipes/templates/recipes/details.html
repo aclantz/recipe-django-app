@@ -9,7 +9,7 @@
   <body>
     <nav class="navbar">
       <div class="navbar__brand">
-        <a href="#"><span>Recipe App</span></a>
+        <a href="{% url 'recipes:home'%}"><span>Recipe App</span></a>
       </div>
       <div class="navbar__links">
         <a href="{% url 'recipes:home'%}"><span>Home</span></a>
@@ -19,21 +19,17 @@
       </div>
     </nav>
     <div class="details__layout">
-      
-      <div class="">
+      <div class="details--container">
         <h1>{{object.name}}</h1>
         <img src="{{object.pic.url}}" width="400" height="300" />
-        <br> 
-
-        <b>Name: </b> {{object.name}} <br />
-
-        <b>Cooking-time: </b> {{object.cooking_time}}min <br />
-        
-        <b>Difficulty: </b> {{object.difficulty}} <br />
-
-        <b>Ingredients: </b> {{object.ingredients}} <br />
-
-        <b>Directions: </b> {{object.directions}} <br />
+        <br />
+        <div class="details--data">
+          <b>Name: </b> {{object.name}} <br />
+          <b>Cooking-time: </b> {{object.cooking_time}}min <br />
+          <b>Difficulty: </b> {{object.difficulty}} <br />
+          <b>Ingredients: </b> {{object.ingredients}} <br />
+          <b>Directions: </b> {{object.directions}} <br />
+        </div>
       </div>
     </div>
   </body>

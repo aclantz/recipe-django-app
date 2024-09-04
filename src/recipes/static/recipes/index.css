@@ -108,7 +108,7 @@ button:hover {
   display: grid;
   grid-template-columns: 1fr 2fr;
   align-items: center;
-  gap: 20px; 
+  /* gap: 20px;  */
 }
 .list--title {
   position: absolute;
@@ -121,6 +121,9 @@ button:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+  max-height: 800px;
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds the height */
+  overflow-x: hidden; /* Hide horizontal overflow */
 }
 .grid--item img {
   width: 300px; 
@@ -130,12 +133,13 @@ button:hover {
 }
 #img--breakfast {
   width: 500px;
-  height: 800px;
+  height: 820px;
   object-fit: cover;
-  margin-top: -230px;
+  margin-top: -20px;
 }
 .grid--text {
   position: relative;
+  /* margin-top: -50px; */
 }
 
 /* Details ------------------------------------------------------------------------------ */
@@ -144,8 +148,18 @@ button:hover {
   display: flex;
   justify-content: center;
 }
+.details--container div {
+  width: 400px;
+}
 .details__layout--img {
   align-self: end;
+}
+.details--data {
+  width: 400px;
+  word-wrap: break-word; /* Ensures long words are wrapped to the next line */
+  overflow-wrap: break-word; /* Another option to handle text wrapping */
+  padding: 10px; /* Adds some space inside the div */
+  margin: 0 auto; 
 }
 
 /* Login/Success --------------------------------------------------------------------------------  */
