@@ -12,10 +12,10 @@
         <a href="#"><span>Recipe App</span></a>
       </div>
       <div class="navbar__links">
-        <a href="#"><span>Home</span></a>
-        <a href="#"><span>Recipes</span></a>
-        <a href="#"><span>About</span></a>
-        <a href="#"><span>Contact</span></a>
+        <a href="{% url 'recipes:home'%}"><span>Home</span></a>
+        <a href="{% url 'recipes:list'%}"><span>Recipes</span></a>
+        <a href="{% url 'recipes:search'%}"><span>Search</span></a>
+        <a href="{% url 'logout'%}"><span>Logout</span></a>
       </div>
     </nav>
     <div class="details__layout">

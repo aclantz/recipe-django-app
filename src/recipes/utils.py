@@ -55,35 +55,6 @@ def get_chart(chart_type, data, highlight_recipe=None, **kwargs):
   
    ax.tick_params(axis='x', colors=COLORS['text'])                    # Set color for tick labels
    ax.tick_params(axis='y', colors=COLORS['text'])
-   plt.tight_layout()                                                  #specify layout details
-   chart = get_graph()                                                 #render the graph to file
+   plt.tight_layout()                                                 #specify layout details
+   chart = get_graph()                                                #render the graph to file
    return chart       
-
-# def get_chart(chart_type, data, **kwargs):
-#    plt.switch_backend('AGG')
-#    fig=plt.figure(figsize = (6,3))                                    #manage details of graphing
-
-#    if chart_type == '#1':
-#       #Bar Chart
-#       plt.bar(data['name'], data['cooking_time'])
-#       plt.xlabel('Recipe Name')
-#       plt.ylabel('Cooking Time')
-
-#    elif chart_type == '#2':
-#       #Pie Chart
-#       labels = kwargs.get('labels')
-#       plt.pie(data['cooking_time'], labels=labels, autopct='%1.1f%%')
-#       plt.title('Cooking Time Distribution')
-
-#    elif chart_type == '#3':
-#       #Line Chart
-#       plt.plot(data['name'], data['difficulty'])
-#       plt.xlabel('Recipe Name')
-#       plt.ylabel('Difficulty Level')
-
-#    else:
-#        print ('unknown chart type')
-  
-#    plt.tight_layout()                                                  #specify layout details
-#    chart = get_graph()                                                 #render the graph to file
-#    return chart       

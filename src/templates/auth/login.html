@@ -13,9 +13,7 @@
       </div>
       <div class="navbar__links">
         <a href="#"><span>Home</span></a>
-        {% comment %} <a href="#"><span>Recipes</span></a>
-        <a href="#"><span>About</span></a>
-        <a href="#"><span>Contact</span></a> {% endcomment %}
+        <a href="{% url 'logout'%}"><span>Logout</span></a>
       </div>
     </nav>
     <div class='main__body'>
@@ -27,9 +25,7 @@
         {{error_message}}
         {% endif %}
         <form action="" method="POST" class='login__form--items'>
-          {% comment %} add Django security token {% endcomment %}
           {% csrf_token %}   
-          {% comment %} print form received from view  {% endcomment %}
           {{form}}           
           <button type="submit" >Login</button>
        </form>

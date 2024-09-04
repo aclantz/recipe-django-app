@@ -123,6 +123,10 @@ STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT= BASE_DIR / 'media'
 
+# added for login redirect for protected views
+LOGIN_URL = '/login/'
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 

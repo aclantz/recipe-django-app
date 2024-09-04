@@ -41,12 +41,6 @@ button {
 button:hover {
   background-color: var(--dark-green);
 }
-/* form {
-  padding: 2rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  border: 1px solid black;
-} */
 
 /* Navigation Bar ---------------------------------------------------------------------- */
 
@@ -90,16 +84,21 @@ button:hover {
 
 .main__head {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   align-items: center;
   /* gap: 20px; */
 }
 .main__head--text {
-  margin-top: -700px;
+ display: flex;
+ justify-content: center;
+ flex-direction: column;
+ padding-left: 40px;
+ /* align-items: center; */
 } 
 #main__img--kitchen {
-  width: 800px;
-  height: auto;
+  width: 500px;
+  height: 800px;
+  object-fit: cover;
 }
 
 
@@ -111,11 +110,13 @@ button:hover {
   align-items: center;
   gap: 20px; 
 }
-/* needs to be looked at, maybe flex direction column */
-/* .list--text {
-  margin-top: -700px;
-  margin-left: 200px;
-} */
+.list--title {
+  position: absolute;
+  padding-left: 20px;
+  background-color: transparent;
+  color: var(--bg-color);
+  align-self: end;
+}
 .list--grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -127,14 +128,15 @@ button:hover {
   object-fit: cover; /* Ensures the image covers the specified dimensions without distorting */
   padding-right: 10px;
 }
-/* .grid--text {
-  padding-left: 100px;
-  text-align: left;
+#img--breakfast {
+  width: 500px;
+  height: 800px;
+  object-fit: cover;
+  margin-top: -230px;
 }
-.grid--text h2 {
-  margin: -1px;
-} */
-
+.grid--text {
+  position: relative;
+}
 
 /* Details ------------------------------------------------------------------------------ */
 
@@ -163,16 +165,17 @@ button:hover {
   margin-bottom: 15px; /* Add space between inputs */
   border: 1px solid var(--dark-green); /* Border styling */
 }
-/* .login__form form {
-
-  background-color: blue;
+.main__body--success {
   display: flex;
-  flex-direction: column;
-  padding: 10px;
+  justify-content: center;
+  padding: 20px;
 }
-.login__form--items {
-  padding: 10px;
-} */
+#img--table {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  padding-right: 20px;
+}
 
 /* Search ------------------------------------------------------------------------- */
 
@@ -207,13 +210,6 @@ button:hover {
   background-color: var(--mid-green); 
   color: var(--bg-color); 
 }
-/* Add a custom arrow for the dropdown */
-/* .search__form select::after {
-  content: '▼';
-  position: absolute;
-  right: 10px;
-  pointer-events: none;
-} */
 .view-all-btn {
   width: max-content;
   margin-bottom: 15px;
