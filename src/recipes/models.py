@@ -8,10 +8,10 @@ from django.shortcuts import reverse
 class Recipe(models.Model):
   name= models.CharField(max_length=50)
   cooking_time= models.IntegerField()
-  ingredients= models.TextField(max_length=250) 
+  ingredients= models.TextField(max_length=250, default='Please separate with commas') 
   difficulty= models.CharField(max_length=12, default= None)
   directions = models.TextField(max_length=500, default= 'No directions added yet for this recipe')
-  pic = models.ImageField(upload_to='recipes', default='no_picture.jpg')
+  pic = models.ImageField(upload_to='recipes/images', default='no_picture.jpg')
 
   def __str__(self):
     return f"id: {self.id}, Name: {self.name}"

@@ -35,6 +35,8 @@ def get_chart(chart_type, data, highlight_recipe=None, **kwargs):
       plt.xlabel('Recipe Name', color=COLORS['text'])                 # X-axis label
       plt.ylabel('Cooking Time (minutes)', color=COLORS['text'])      # Y-axis label
       plt.title('Cooking Time by Recipe', color=COLORS['text'])
+      ax.set_xticklabels(data['name'], rotation=45, ha='right')  # Rotate x-axis labels
+
 
    elif chart_type == '#2':
       #Pie Chart
@@ -49,6 +51,7 @@ def get_chart(chart_type, data, highlight_recipe=None, **kwargs):
       plt.xlabel('Recipe Name', color=COLORS['text'])                 # X-axis label
       plt.ylabel('Cooking Time (minutes)', color=COLORS['text'])      # Y-axis label
       plt.title('Cooking Time by Recipe', color=COLORS['text'])
+      ax.set_xticklabels(data['name'], rotation=45, ha='right')  # Rotate x-axis labels
 
    else:
        print ('unknown chart type')

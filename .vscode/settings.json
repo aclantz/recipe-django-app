@@ -3,6 +3,7 @@
     "facecolor",
     "ingrd",
     "xlabel",
+    "xticklabels",
     "ylabel"
   ]
 }

@@ -245,6 +245,58 @@ button:hover {
 .search--query form {
   width: 30%;
 }
+/* Create ------------------------------------------------------------------------------ */
+.create__layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  gap: 20px; 
+}
+#img--dishes {
+  width: 500px;
+  height: 800px;
+  object-fit: cover;
+}
+/* .create__form input[type="text"] {
+  width: 100%; 
+  padding: 10px; 
+  margin-bottom: 15px; 
+  border: 1px solid var(--dark-green); 
+}
+.create__form input[type="number"] {
+  width: 100%; 
+  padding: 10px; 
+  margin-bottom: 15px; 
+  border: 1px solid var(--dark-green); 
+} */
+.create__form input[type="text"],
+.create__form input[type="number"],
+.create__form textarea {
+  width: 100%; 
+  padding: 10px; 
+  margin-bottom: 15px; 
+  border: 1px solid var(--dark-green); 
+  resize: vertical; /* Allows vertical resizing of textarea */
+}
+.create__elements {
+  width: 500px;
+}
+.messages {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+.messages li {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+.messages .success {
+  background-color: var(--dark-green);
+  color: var(--bg-color);
+}
+
+
 /* About ------------------------------------------------------------------------------ */
 
 .about__layout {

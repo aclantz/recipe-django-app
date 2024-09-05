@@ -15,7 +15,7 @@ Learn to use Django and build an application to store and edit recipes. In conne
 
 
 ## Main Functions
-The main focus of this app is to view the recipe database I have created. The functions I built are a mix of GuerySet, Pandas, matpoltlib, and striaght python. The functions I am most proud of are as follows:
+The main focus of this app is to view the recipe database I have created. The functions I built are a mix of QuerySet, Pandas, matpoltlib, and striaght python. The functions I am most proud of are as follows:
 
 - SearchView()
   - This function is the backbone of the search page and allows you to search for a recipe and have the 'name' and 'ingredients' returned as well as a data visualization of how much time it takes to make the recipe in comparison to the other recipes in the database. 
