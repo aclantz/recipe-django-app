@@ -22,6 +22,13 @@ html, body {
 h1, h2 {
   color: var(--mid-green);
 }
+h3 {
+  color: var(--dark-green);
+}
+h3:hover {
+  /* only h3 is about links */
+  color: var(--light-green);
+}
 a {
   text-decoration: none;
 }
@@ -93,6 +100,9 @@ button:hover {
  justify-content: center;
  flex-direction: column;
  padding-left: 40px;
+ width: 500px;
+ word-wrap: break-word; /* Ensures long words are wrapped to the next line */
+ overflow-wrap: break-word; /* Another option to handle text wrapping */
  /* align-items: center; */
 } 
 #main__img--kitchen {
@@ -139,7 +149,6 @@ button:hover {
 }
 .grid--text {
   position: relative;
-  /* margin-top: -50px; */
 }
 
 /* Details ------------------------------------------------------------------------------ */
@@ -204,6 +213,11 @@ button:hover {
   height: 800px;
   object-fit: cover;
 }
+.search__elements {
+  max-height: 800px;
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds the height */
+  overflow-x: hidden; /* Hide horizontal overflow */
+}
 .search--query {
   display: flex;
   justify-content: center;
@@ -230,4 +244,36 @@ button:hover {
 }
 .search--query form {
   width: 30%;
+}
+/* About ------------------------------------------------------------------------------ */
+
+.about__layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  gap: 20px; 
+}
+.about--text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 500px;
+  word-wrap: break-word; /* Ensures long words are wrapped to the next line */
+  overflow-wrap: break-word; /* Another option to handle text wrapping */
+}
+.about--container {
+  padding: 10px; /* Adds some space inside the div */
+  max-height: 800px;
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds the height */
+  overflow-x: hidden; /* Hide horizontal overflow */
+}
+.about--name {
+  color: var(--dark-green);
+  font-size: 20px;
+}
+#img--profile {
+  width: 500px;
+  height: 820px;
+  object-fit: cover;
+  margin-top: -20px;
 }

@@ -22,6 +22,9 @@ class RecipeDetailView(LoginRequiredMixin, DetailView):
   model = Recipe
   template_name = 'recipes/details.html'
 
+def about_view(request):
+  return render(request, 'recipes/about.html')
+
 @login_required
 def SearchView(request):
   form = RecipeSearchForm(request.POST or None)

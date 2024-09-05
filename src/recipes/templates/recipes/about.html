@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recipe Django App</title>
+    <meta charset="UTF-8" />
+    <meta name="viewpoint" content="width=device-width, inital-scale=1.0" />
+    <link rel="stylesheet" href="../../static/recipes/index.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar__brand">
+        <a href="{% url 'recipes:home'%}"><span>Recipe App</span></a>
+      </div>
+      <div class="navbar__links">
+        <a href="{% url 'recipes:home'%}"><span>Home</span></a>
+        <a href="{% url 'recipes:list'%}"><span>Recipes</span></a>
+        <a href="{% url 'recipes:search'%}"><span>Search</span></a>
+        <a href="{% url 'logout'%}"><span>Logout</span></a>
+      </div>
+    </nav>
+    <div class="about__layout">
+      <img src={% static 'recipes/images/rainier-profile.jpeg'%} alt="Me at Mt Rainier" id="img--profile">
+      <div class="about--container">
+        <div class="about--text">
+          <h1>About me</h1>
+          <a href="https://aclantz.github.io/"><h3>My Portfolio Website</h3></a>
+          <a href="https://github.com/aclantz"><h3>Github</h3></a>
+          <p>
+            My name is <span class="about--name">Alex Lantz</span> and I’m a web
+            developer with a prior 15-year career working as a professional
+            ballet dancer. The competitive world of ballet ingrains patience,
+            focus, and attention to detail. So many years in that career allowed
+            me to not only grow as an artist, but to understand how to work with
+            different people in an intimate setting. Solving problems and
+            creating with colleagues is what brought me to web development, as I
+            enjoy working with people on small details to help build something
+            together. Learning through Career Foundry’s web development boot
+            camp has broadened my skills and allowed me to continue creating in
+            a virtual space. <br>My experience includes:
+          </p>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Angular</li>
+            <li>Python</li>
+            <li>Django</li>
+          </ul>
+          <p>
+            I hope to find an environment to continue creating and to keep
+            learning while I grow in this new field. To contact me, or to look
+            at some of my work, please visit my portfolio.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
