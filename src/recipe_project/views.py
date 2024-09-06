@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 #Django Form for authentication
 from django.contrib.auth.forms import AuthenticationForm 
 
+
 def login_view(request):
   form = AuthenticationForm()                                     # from object 
   error_message = None                                            # initialize error_message
