@@ -3,6 +3,14 @@
 ## Goal
 Learn to use Django and build an application to store and edit recipes. In connection with CareerFoundry Python for Web Developers course, This is my final project in the Full-Stack Web Developer program. 
 
+## Hosting
+I used PythonAnywhere.com to host my application. 
+https://aclantz.pythonanywhere.com/
+
+if you wish to view the app you can use these login credentials:
+login: visitor
+password: alexlantz
+
 ## Key Features
 - Allow for user authentication, login, and logout.
 - Let users search for recipes according to ingredients.

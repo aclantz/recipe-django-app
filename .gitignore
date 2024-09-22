@@ -2,3 +2,6 @@
 *.bak
 #database
 *.sqlite3
+
+#changed env for hosting testing
+.env-3.10
