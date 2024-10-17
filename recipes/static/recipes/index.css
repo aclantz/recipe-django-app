@@ -19,7 +19,7 @@ html, body {
   padding: 0;
 }
 
-h1, h2 {
+h1, h2, h4 {
   color: var(--mid-green);
 }
 h3 {
@@ -198,6 +198,14 @@ button:hover {
   height: 400px;
   object-fit: cover;
   padding-right: 20px;
+}
+.login__note {
+  border: 1px solid var(--dark-green);
+  margin-top: 20px;
+  padding-left: 5px;
+}
+.note {
+  color: var(--dark-green);
 }
 
 /* Search ------------------------------------------------------------------------- */
